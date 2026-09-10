@@ -1,0 +1,10 @@
+services:
+  ble.sub:
+    container_name: ble.sub
+    image: python:3.13-slim-u9
+    restart: unless-stopped
+    network_mode: "host"
+    working_dir: /app
+    volumes:
+      - ./data:/app
+    command: ["python3", "app.py"]
